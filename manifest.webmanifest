@@ -1,0 +1,14 @@
+{
+  "name": "KARMADA - Manajemen Rental Mobil",
+  "short_name": "KARMADA",
+  "description": "Kelola armada dan booking rental mobil.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f7f9f8",
+  "theme_color": "#102b28",
+  "icons": [
+    {"src":"assets/icons/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
