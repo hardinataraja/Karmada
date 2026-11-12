@@ -1,4 +1,4 @@
-const CACHE='karmada-static-v1';
+const CACHE='karmada-static-v2';
 const CORE=['./','./index.html','./css/styles.css','./js/app.js','./js/firebase-config.js','./manifest.webmanifest','./assets/icons/icon.svg','./assets/icons/car-placeholder.svg'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)));self.skipWaiting()});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim()});
