@@ -1,0 +1,4 @@
+{
+  "brands": { "bmw": "BMW", "mg": "MG", "byd": "BYD", "daihatsu": "Daihatsu" },
+  "types":  { "crv": "CR-V", "hrv": "HR-V", "brv": "BR-V", "wrv": "WR-V", "xl7": "XL7" }
+}

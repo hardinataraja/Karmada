@@ -26,7 +26,13 @@ Data disimpan dengan isolasi per pengguna: `users/{uid}` dan subkoleksi `vehicle
 
 ## Foto kendaraan
 
-Letakkan file gambar di `assets/cars/`, dengan nama lowercase seperti `avanza_2020.png`, `brio_2021.jpg`, atau `xpander_2022.webp`. Saat kendaraan ditambahkan, aplikasi membentuk nama file dari model dan tahun lalu mencoba beberapa ekstensi. Jika file tidak ditemukan, gambar mobil fallback akan ditampilkan. Pastikan foto yang digunakan memang memiliki izin penggunaan.
+Foto dipilih lewat dropdown **Merk → Tipe → Tahun** di form *Tambah mobil*; semua foto untuk kombinasi itu tampil, dan Anda memilih satu sebagai foto utama. Klik foto di kartu armada untuk melihat semua fotonya.
+
+1. Taruh foto di `assets/cars/` dengan nama `merk_tipe_tahun.ext` (foto tambahan: `merk_tipe_tahun_2.ext`). Contoh: `toyota_avanza_2023.png`.
+2. Jalankan `python3 tools/generate_catalog.py` untuk memperbarui `js/catalog.js`.
+3. Commit dan deploy. Detail ada di `assets/cars/README.md`.
+
+Mobil yang merknya tidak ada di katalog bisa ditambah lewat opsi *Lainnya (tanpa foto)*. Pastikan foto yang digunakan memang memiliki izin penggunaan.
 
 ## Deploy
 
@@ -37,7 +43,7 @@ Proyek ini statis, tanpa proses build. Isi seluruh folder ke repository GitHub l
 - `index.html`, `css/`, `js/`: antarmuka dan aplikasi.
 - `manifest.webmanifest`, `sw.js`: instalasi dan cache PWA.
 - `assets/icons/`: ikon aplikasi.
-- `assets/cars/`: tempat foto kendaraan milik proyek.
+- `assets/cars/`: foto kendaraan; `js/catalog.js`: daftar merk/tipe/tahun (dibuat otomatis); `tools/generate_catalog.py`: pembuatnya.
 - `firestore.rules`: contoh aturan akses per pengguna.
 
 Mode demo menyimpan data pada browser yang sama (localStorage), bukan ke cloud.
